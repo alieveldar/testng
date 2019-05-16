@@ -14,6 +14,6 @@ CREATE TABLE `_banners_orders` (
   `did` varchar(255) NOT NULL COMMENT 'домен',
   `datafrom` varchar(15) NOT NULL,
   `datato` varchar(15) NOT NULL,
-  `dataart` text NOT NULL,
+  `dataart` text NOT NULL COMMENT 'Даты выхода статей',
   `text` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

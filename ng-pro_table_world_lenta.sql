@@ -2,10 +2,10 @@
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `auto_lenta`
+-- Структура таблицы `world_lenta`
 --
 
-CREATE TABLE `auto_lenta` (
+CREATE TABLE `world_lenta` (
   `id` mediumint(9) NOT NULL,
   `import` varchar(255) NOT NULL COMMENT 'Метка импортированной новости (сайт и id)',
   `pid` mediumint(9) NOT NULL,
@@ -50,4 +50,4 @@ CREATE TABLE `auto_lenta` (
   `mailtizer` int(1) NOT NULL DEFAULT '0' COMMENT 'в тизер Mail',
   `showauthor` tinyint(1) NOT NULL DEFAULT '0',
   `zenyandex` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Отправить в zen.yandex'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;

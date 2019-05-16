@@ -2,10 +2,10 @@
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `auto_lenta`
+-- Структура таблицы `business_lenta`
 --
 
-CREATE TABLE `auto_lenta` (
+CREATE TABLE `business_lenta` (
   `id` mediumint(9) NOT NULL,
   `import` varchar(255) NOT NULL COMMENT 'Метка импортированной новости (сайт и id)',
   `pid` mediumint(9) NOT NULL,

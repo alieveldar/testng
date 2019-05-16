@@ -10,7 +10,7 @@ CREATE TABLE `companies_items` (
   `rate` mediumint(9) NOT NULL,
   `stat` int(1) NOT NULL DEFAULT '0',
   `cats` varchar(255) NOT NULL COMMENT 'категория',
-  `consultscats` varchar(255) NOT NULL COMMENT 'категория в консультациях',
+  `consultscats` varchar(255) NOT NULL,
   `data` varchar(15) NOT NULL,
   `todata` varchar(15) NOT NULL,
   `uid` mediumint(9) NOT NULL,

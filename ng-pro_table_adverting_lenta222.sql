@@ -2,10 +2,10 @@
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `auto_lenta`
+-- Структура таблицы `adverting_lenta222`
 --
 
-CREATE TABLE `auto_lenta` (
+CREATE TABLE `adverting_lenta222` (
   `id` mediumint(9) NOT NULL,
   `import` varchar(255) NOT NULL COMMENT 'Метка импортированной новости (сайт и id)',
   `pid` mediumint(9) NOT NULL,
@@ -47,7 +47,5 @@ CREATE TABLE `auto_lenta` (
   `spromo` int(1) NOT NULL DEFAULT '0',
   `redak` int(1) NOT NULL DEFAULT '0' COMMENT 'Редакционная колонка',
   `gis` int(1) NOT NULL DEFAULT '0' COMMENT 'Отправить гисметео',
-  `mailtizer` int(1) NOT NULL DEFAULT '0' COMMENT 'в тизер Mail',
-  `showauthor` tinyint(1) NOT NULL DEFAULT '0',
-  `zenyandex` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Отправить в zen.yandex'
+  `mailtizer` int(1) NOT NULL DEFAULT '0' COMMENT 'в тизер Mail'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

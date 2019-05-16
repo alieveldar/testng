@@ -2,10 +2,10 @@
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `auto_lenta`
+-- Структура таблицы `economy_lenta`
 --
 
-CREATE TABLE `auto_lenta` (
+CREATE TABLE `economy_lenta` (
   `id` mediumint(9) NOT NULL,
   `import` varchar(255) NOT NULL COMMENT 'Метка импортированной новости (сайт и id)',
   `pid` mediumint(9) NOT NULL,
@@ -16,9 +16,9 @@ CREATE TABLE `auto_lenta` (
   `astat` int(1) NOT NULL DEFAULT '0' COMMENT 'разрешить автопубликацию',
   `adata` varchar(15) NOT NULL DEFAULT '' COMMENT 'время автопубликации',
   `stat` int(1) NOT NULL DEFAULT '0',
-  `likes` mediumint(9) NOT NULL DEFAULT '0',
-  `dislikes` mediumint(9) NOT NULL DEFAULT '0',
-  `seens` mediumint(9) NOT NULL DEFAULT '0',
+  `seens` int(1) NOT NULL DEFAULT '0',
+  `likes` int(1) NOT NULL DEFAULT '0',
+  `dislikes` int(1) NOT NULL DEFAULT '0',
   `name` varchar(255) NOT NULL,
   `lid` text NOT NULL,
   `text` text NOT NULL,
@@ -44,10 +44,8 @@ CREATE TABLE `auto_lenta` (
   `onind` int(1) NOT NULL DEFAULT '0' COMMENT 'в телевизор',
   `spec` int(1) NOT NULL DEFAULT '0' COMMENT 'спец. размещение',
   `promo` int(1) NOT NULL DEFAULT '0' COMMENT 'коммерческая новость',
-  `spromo` int(1) NOT NULL DEFAULT '0',
+  `spromo` int(1) NOT NULL DEFAULT '0' COMMENT 'VIP коммерческая новость',
   `redak` int(1) NOT NULL DEFAULT '0' COMMENT 'Редакционная колонка',
   `gis` int(1) NOT NULL DEFAULT '0' COMMENT 'Отправить гисметео',
-  `mailtizer` int(1) NOT NULL DEFAULT '0' COMMENT 'в тизер Mail',
-  `showauthor` tinyint(1) NOT NULL DEFAULT '0',
-  `zenyandex` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Отправить в zen.yandex'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `mailtizer` int(1) NOT NULL DEFAULT '0' COMMENT 'в тизер Mail'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;

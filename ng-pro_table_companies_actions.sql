@@ -15,6 +15,8 @@ CREATE TABLE `companies_actions` (
   `name` varchar(255) NOT NULL,
   `text` text NOT NULL,
   `pic` varchar(255) NOT NULL,
-  `dop` text NOT NULL,
-  `tags` text NOT NULL
+  `pics` text NOT NULL,
+  `tags` text NOT NULL,
+  `rest` text NOT NULL,
+  `fas` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

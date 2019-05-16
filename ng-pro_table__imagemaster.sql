@@ -19,4 +19,4 @@ CREATE TABLE `_imagemaster` (
   `fontcolor` varchar(25) NOT NULL DEFAULT '000000',
   `fontfamily` varchar(255) NOT NULL DEFAULT 'Arial',
   `fontchars` mediumint(9) NOT NULL DEFAULT '21'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -11,4 +11,4 @@ CREATE TABLE `_tracker` (
   `pid` mediumint(9) NOT NULL,
   `data` varchar(25) NOT NULL,
   `stat` int(1) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

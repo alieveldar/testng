@@ -2,29 +2,31 @@
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `auto_lenta`
+-- Структура таблицы `category150_lenta`
 --
 
-CREATE TABLE `auto_lenta` (
+CREATE TABLE `category150_lenta` (
   `id` mediumint(9) NOT NULL,
-  `import` varchar(255) NOT NULL COMMENT 'Метка импортированной новости (сайт и id)',
+  `alias` varchar(255) NOT NULL,
   `pid` mediumint(9) NOT NULL,
   `bid` mediumint(9) NOT NULL COMMENT 'id баннера из БС',
+  `import` varchar(255) NOT NULL COMMENT 'Метка импортированной новости (сайт и id)',
   `rate` mediumint(9) NOT NULL,
   `cat` mediumint(9) NOT NULL DEFAULT '0' COMMENT 'категория',
   `data` varchar(15) NOT NULL,
   `astat` int(1) NOT NULL DEFAULT '0' COMMENT 'разрешить автопубликацию',
   `adata` varchar(15) NOT NULL DEFAULT '' COMMENT 'время автопубликации',
   `stat` int(1) NOT NULL DEFAULT '0',
-  `likes` mediumint(9) NOT NULL DEFAULT '0',
-  `dislikes` mediumint(9) NOT NULL DEFAULT '0',
-  `seens` mediumint(9) NOT NULL DEFAULT '0',
+  `seen` mediumint(9) NOT NULL,
+  `likes` mediumint(9) NOT NULL,
+  `dislikes` mediumint(9) NOT NULL,
+  `seens` mediumint(9) NOT NULL,
   `name` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
   `lid` text NOT NULL,
   `text` text NOT NULL,
   `alttext` text NOT NULL,
   `endtext` text NOT NULL,
-  `soctext` text NOT NULL,
   `pic` varchar(255) NOT NULL,
   `uid` mediumint(9) NOT NULL,
   `adv` text NOT NULL,
@@ -44,10 +46,10 @@ CREATE TABLE `auto_lenta` (
   `onind` int(1) NOT NULL DEFAULT '0' COMMENT 'в телевизор',
   `spec` int(1) NOT NULL DEFAULT '0' COMMENT 'спец. размещение',
   `promo` int(1) NOT NULL DEFAULT '0' COMMENT 'коммерческая новость',
-  `spromo` int(1) NOT NULL DEFAULT '0',
+  `spromo` varchar(1) NOT NULL,
   `redak` int(1) NOT NULL DEFAULT '0' COMMENT 'Редакционная колонка',
   `gis` int(1) NOT NULL DEFAULT '0' COMMENT 'Отправить гисметео',
   `mailtizer` int(1) NOT NULL DEFAULT '0' COMMENT 'в тизер Mail',
-  `showauthor` tinyint(1) NOT NULL DEFAULT '0',
-  `zenyandex` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Отправить в zen.yandex'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `preview_mobile` tinyint(1) NOT NULL COMMENT 'Preview in mobile',
+  `vk_np` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;

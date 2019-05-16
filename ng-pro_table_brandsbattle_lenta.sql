@@ -2,14 +2,14 @@
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `concurs_lenta`
+-- Структура таблицы `brandsbattle_lenta`
 --
 
-CREATE TABLE `concurs_lenta` (
+CREATE TABLE `brandsbattle_lenta` (
   `id` mediumint(9) NOT NULL,
   `pid` mediumint(9) NOT NULL,
   `rate` mediumint(9) NOT NULL,
-  `domain` mediumint(9) NOT NULL DEFAULT '0' COMMENT 'Домен',
+  `domain` mediumint(9) NOT NULL DEFAULT '0' COMMENT 'категория',
   `data` varchar(15) NOT NULL COMMENT 'дата создания',
   `astat` int(1) NOT NULL DEFAULT '0' COMMENT 'разрешить автопубликацию',
   `adata` varchar(15) NOT NULL DEFAULT '' COMMENT 'дата автопубликации',
@@ -36,7 +36,7 @@ CREATE TABLE `concurs_lenta` (
   `comcount` mediumint(9) NOT NULL DEFAULT '0' COMMENT 'количество комментариев',
   `voting` int(1) NOT NULL DEFAULT '0' COMMENT 'статус голосования',
   `votingend` varchar(15) NOT NULL COMMENT 'дата окончания голосования',
-  `elemsstyle` int(1) NOT NULL DEFAULT '3' COMMENT 'стиль номинантов в голосовании',
+  `votingmode` int(1) NOT NULL DEFAULT '1' COMMENT 'Режим голосования',
   `winnerscount` int(1) NOT NULL DEFAULT '1' COMMENT 'количество победителей',
   `tags` text NOT NULL COMMENT 'теги материала',
   `yarss` int(1) NOT NULL DEFAULT '0' COMMENT 'В яндекс',
@@ -48,5 +48,6 @@ CREATE TABLE `concurs_lenta` (
   `spromo` int(1) NOT NULL DEFAULT '0',
   `redak` int(1) NOT NULL DEFAULT '0' COMMENT 'Редакционная колонка',
   `gis` int(1) NOT NULL DEFAULT '0' COMMENT 'Отправить гисметео',
-  `mailtizer` int(1) NOT NULL DEFAULT '0' COMMENT 'в тизер Mail'
+  `galka` int(1) NOT NULL DEFAULT '0' COMMENT 'Просто калка',
+  `zenyandex` int(1) NOT NULL DEFAULT '0' COMMENT 'Отправить в zen.yandex'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

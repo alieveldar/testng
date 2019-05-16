@@ -12,4 +12,4 @@ CREATE TABLE `_lentalog` (
   `data` varchar(25) NOT NULL,
   `ip` varchar(25) NOT NULL,
   `text` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

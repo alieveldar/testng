@@ -10,4 +10,4 @@ CREATE TABLE `_menulist` (
   `stat` varchar(1) NOT NULL DEFAULT '0' COMMENT '1 - вкл, 0 - выкл',
   `name` varchar(255) NOT NULL,
   `link` varchar(25) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

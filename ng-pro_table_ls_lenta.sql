@@ -2,14 +2,14 @@
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `auto_lenta`
+-- Структура таблицы `ls_lenta`
 --
 
-CREATE TABLE `auto_lenta` (
+CREATE TABLE `ls_lenta` (
   `id` mediumint(9) NOT NULL,
   `import` varchar(255) NOT NULL COMMENT 'Метка импортированной новости (сайт и id)',
   `pid` mediumint(9) NOT NULL,
-  `bid` mediumint(9) NOT NULL COMMENT 'id баннера из БС',
+  `bid` mediumint(9) NOT NULL COMMENT 'id баннера',
   `rate` mediumint(9) NOT NULL,
   `cat` mediumint(9) NOT NULL DEFAULT '0' COMMENT 'категория',
   `data` varchar(15) NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE `auto_lenta` (
   `name` varchar(255) NOT NULL,
   `lid` text NOT NULL,
   `text` text NOT NULL,
-  `alttext` text NOT NULL,
+  `alttext` longtext NOT NULL,
   `endtext` text NOT NULL,
   `soctext` text NOT NULL,
   `pic` varchar(255) NOT NULL,

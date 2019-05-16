@@ -4,29 +4,6 @@
 --
 
 --
--- Индексы таблицы `accidents_cats`
---
-ALTER TABLE `accidents_cats`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `accidents_lenta`
---
-ALTER TABLE `accidents_lenta`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
-  ADD KEY `likes` (`likes`),
-  ADD KEY `seen` (`seen`),
-  ADD KEY `stat` (`stat`),
-  ADD KEY `uid` (`uid`),
-  ADD KEY `onind` (`onind`),
-  ADD KEY `promo` (`promo`),
-  ADD KEY `spromo` (`spromo`),
-  ADD KEY `redak` (`redak`),
-  ADD KEY `data` (`data`),
-  ADD KEY `preview_mobile` (`preview_mobile`);
-
---
 -- Индексы таблицы `add_cats`
 --
 ALTER TABLE `add_cats`
@@ -50,28 +27,56 @@ ALTER TABLE `adverting_cats`
 ALTER TABLE `adverting_lenta`
   ADD PRIMARY KEY (`id`),
   ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
-  ADD KEY `likes` (`likes`),
-  ADD KEY `seen` (`seen`),
   ADD KEY `stat` (`stat`),
+  ADD KEY `data` (`data`),
   ADD KEY `uid` (`uid`),
   ADD KEY `onind` (`onind`),
   ADD KEY `promo` (`promo`),
   ADD KEY `spromo` (`spromo`),
-  ADD KEY `redak` (`redak`),
+  ADD KEY `redak` (`redak`);
+
+--
+-- Индексы таблицы `adverting_lenta1`
+--
+ALTER TABLE `adverting_lenta1`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
+  ADD KEY `stat` (`stat`),
   ADD KEY `data` (`data`),
-  ADD KEY `preview_mobile` (`preview_mobile`);
+  ADD KEY `uid` (`uid`),
+  ADD KEY `onind` (`onind`),
+  ADD KEY `promo` (`promo`),
+  ADD KEY `spromo` (`spromo`),
+  ADD KEY `redak` (`redak`);
+
+--
+-- Индексы таблицы `adverting_lenta222`
+--
+ALTER TABLE `adverting_lenta222`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
+  ADD KEY `stat` (`stat`),
+  ADD KEY `data` (`data`),
+  ADD KEY `uid` (`uid`),
+  ADD KEY `onind` (`onind`),
+  ADD KEY `promo` (`promo`),
+  ADD KEY `spromo` (`spromo`),
+  ADD KEY `redak` (`redak`);
 
 --
 -- Индексы таблицы `advertise_objects`
 --
 ALTER TABLE `advertise_objects`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `data` (`data`),
+  ADD KEY `uid` (`uid`);
 
 --
 -- Индексы таблицы `advertise_pays`
 --
 ALTER TABLE `advertise_pays`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `oid` (`oid`);
 
 --
 -- Индексы таблицы `advertise_razdels`
@@ -97,16 +102,14 @@ ALTER TABLE `afisha_cats`
 ALTER TABLE `afisha_lenta`
   ADD PRIMARY KEY (`id`),
   ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
-  ADD KEY `likes` (`likes`),
-  ADD KEY `seen` (`seen`),
   ADD KEY `stat` (`stat`),
+  ADD KEY `data` (`data`),
   ADD KEY `uid` (`uid`),
   ADD KEY `onind` (`onind`),
   ADD KEY `promo` (`promo`),
   ADD KEY `spromo` (`spromo`),
   ADD KEY `redak` (`redak`),
-  ADD KEY `data` (`data`),
-  ADD KEY `preview_mobile` (`preview_mobile`);
+  ADD KEY `afisha_stat_onind` (`stat`,`data`,`onind`);
 
 --
 -- Индексы таблицы `auto_cats`
@@ -120,27 +123,52 @@ ALTER TABLE `auto_cats`
 ALTER TABLE `auto_lenta`
   ADD PRIMARY KEY (`id`),
   ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
-  ADD KEY `likes` (`likes`),
-  ADD KEY `seen` (`seen`),
+  ADD KEY `uid` (`uid`),
+  ADD KEY `stat` (`stat`),
+  ADD KEY `data` (`data`),
+  ADD KEY `onind` (`onind`),
+  ADD KEY `promo` (`promo`),
+  ADD KEY `spromo` (`spromo`),
+  ADD KEY `redak` (`redak`);
+
+--
+-- Индексы таблицы `brandsbattle_lenta`
+--
+ALTER TABLE `brandsbattle_lenta`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
+  ADD KEY `data` (`data`),
   ADD KEY `stat` (`stat`),
   ADD KEY `uid` (`uid`),
   ADD KEY `onind` (`onind`),
   ADD KEY `promo` (`promo`),
   ADD KEY `spromo` (`spromo`),
-  ADD KEY `redak` (`redak`),
-  ADD KEY `data` (`data`),
-  ADD KEY `preview_mobile` (`preview_mobile`);
+  ADD KEY `redak` (`redak`);
 
 --
--- Индексы таблицы `blogs_cats`
+-- Индексы таблицы `business_cats`
 --
-ALTER TABLE `blogs_cats`
+ALTER TABLE `business_cats`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `blogs_lenta`
+-- Индексы таблицы `business_lenta`
 --
-ALTER TABLE `blogs_lenta`
+ALTER TABLE `business_lenta`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
+  ADD KEY `stat` (`stat`),
+  ADD KEY `data` (`data`),
+  ADD KEY `uid` (`uid`),
+  ADD KEY `onind` (`onind`),
+  ADD KEY `promo` (`promo`),
+  ADD KEY `spromo` (`spromo`),
+  ADD KEY `redak` (`redak`);
+
+--
+-- Индексы таблицы `category150_lenta`
+--
+ALTER TABLE `category150_lenta`
   ADD PRIMARY KEY (`id`),
   ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
   ADD KEY `likes` (`likes`),
@@ -155,47 +183,17 @@ ALTER TABLE `blogs_lenta`
   ADD KEY `preview_mobile` (`preview_mobile`);
 
 --
--- Индексы таблицы `category129_cats`
+-- Индексы таблицы `category1829_cats`
 --
-ALTER TABLE `category129_cats`
+ALTER TABLE `category1829_cats`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `category129_contacts`
+-- Индексы таблицы `category1829_lenta`
 --
-ALTER TABLE `category129_contacts`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `category129_lenta`
---
-ALTER TABLE `category129_lenta`
+ALTER TABLE `category1829_lenta`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
-  ADD KEY `FK__category129_lenta__category129_cats` (`cat`);
-
---
--- Индексы таблицы `category149_cats`
---
-ALTER TABLE `category149_cats`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `category149_specprj`
---
-ALTER TABLE `category149_specprj`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
-  ADD KEY `likes` (`likes`),
-  ADD KEY `seen` (`seen`),
-  ADD KEY `stat` (`stat`),
-  ADD KEY `uid` (`uid`),
-  ADD KEY `onind` (`onind`),
-  ADD KEY `promo` (`promo`),
-  ADD KEY `spromo` (`spromo`),
-  ADD KEY `redak` (`redak`),
-  ADD KEY `data` (`data`),
-  ADD KEY `preview_mobile` (`preview_mobile`);
+  ADD KEY `pid` (`pid`,`stat`,`name`,`uid`);
 
 --
 -- Индексы таблицы `companies_actions`
@@ -233,107 +231,46 @@ ALTER TABLE `companies_qa`
 ALTER TABLE `concurs_lenta`
   ADD PRIMARY KEY (`id`),
   ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
-  ADD KEY `seen` (`seens`),
-  ADD KEY `likes` (`likes`),
-  ADD KEY `seen_2` (`seen`),
+  ADD KEY `data` (`data`),
   ADD KEY `stat` (`stat`),
   ADD KEY `uid` (`uid`),
   ADD KEY `onind` (`onind`),
   ADD KEY `promo` (`promo`),
   ADD KEY `spromo` (`spromo`),
-  ADD KEY `redak` (`redak`),
-  ADD KEY `data` (`data`),
-  ADD KEY `preview_mobile` (`preview_mobile`);
+  ADD KEY `redak` (`redak`);
 
 --
--- Индексы таблицы `dosug_cats`
+-- Индексы таблицы `economy_cats`
 --
-ALTER TABLE `dosug_cats`
+ALTER TABLE `economy_cats`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `dosug_lenta`
+-- Индексы таблицы `economy_lenta`
 --
-ALTER TABLE `dosug_lenta`
+ALTER TABLE `economy_lenta`
   ADD PRIMARY KEY (`id`),
   ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
-  ADD KEY `likes` (`likes`),
-  ADD KEY `seen` (`seen`),
+  ADD KEY `data` (`data`),
   ADD KEY `stat` (`stat`),
   ADD KEY `uid` (`uid`),
   ADD KEY `onind` (`onind`),
   ADD KEY `promo` (`promo`),
   ADD KEY `spromo` (`spromo`),
-  ADD KEY `redak` (`redak`),
-  ADD KEY `data` (`data`),
-  ADD KEY `preview_mobile` (`preview_mobile`);
+  ADD KEY `redak` (`redak`);
 
 --
--- Индексы таблицы `globalnews_cats`
+-- Индексы таблицы `livestream_cats`
 --
-ALTER TABLE `globalnews_cats`
+ALTER TABLE `livestream_cats`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `globalnews_lenta`
+-- Индексы таблицы `livestream_lenta`
 --
-ALTER TABLE `globalnews_lenta`
+ALTER TABLE `livestream_lenta`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
-  ADD KEY `seens` (`seens`),
-  ADD KEY `stat` (`stat`),
-  ADD KEY `uid` (`uid`),
-  ADD KEY `onind` (`onind`),
-  ADD KEY `promo` (`promo`),
-  ADD KEY `spromo` (`spromo`),
-  ADD KEY `redak` (`redak`),
-  ADD KEY `data` (`data`),
-  ADD KEY `preview_mobile` (`preview_mobile`);
-
---
--- Индексы таблицы `itogi_cats`
---
-ALTER TABLE `itogi_cats`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `itogi_lenta`
---
-ALTER TABLE `itogi_lenta`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
-  ADD KEY `likes` (`likes`),
-  ADD KEY `stat` (`stat`),
-  ADD KEY `uid` (`uid`),
-  ADD KEY `onind` (`onind`),
-  ADD KEY `promo` (`promo`),
-  ADD KEY `spromo` (`spromo`),
-  ADD KEY `redak` (`redak`),
-  ADD KEY `data` (`data`),
-  ADD KEY `preview_mobile` (`preview_mobile`);
-
---
--- Индексы таблицы `lifehistory_cats`
---
-ALTER TABLE `lifehistory_cats`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `lifehistory_lenta`
---
-ALTER TABLE `lifehistory_lenta`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
-  ADD KEY `likes` (`likes`),
-  ADD KEY `seen` (`seen`),
-  ADD KEY `stat` (`stat`),
-  ADD KEY `uid` (`uid`),
-  ADD KEY `onind` (`onind`),
-  ADD KEY `promo` (`promo`),
-  ADD KEY `spromo` (`spromo`),
-  ADD KEY `redak` (`redak`),
-  ADD KEY `data` (`data`),
-  ADD KEY `preview_mobile` (`preview_mobile`);
+  ADD KEY `pid` (`pid`,`stat`,`name`,`uid`);
 
 --
 -- Индексы таблицы `live_cat`
@@ -342,7 +279,9 @@ ALTER TABLE `live_cat`
   ADD PRIMARY KEY (`id`),
   ADD KEY `rate` (`rate`,`uid`),
   ADD KEY `fid` (`fid`),
-  ADD KEY `update` (`update`);
+  ADD KEY `update` (`update`),
+  ADD KEY `stat` (`stat`),
+  ADD KEY `update_2` (`update`);
 
 --
 -- Индексы таблицы `live_forum`
@@ -357,12 +296,30 @@ ALTER TABLE `live_lenta`
   ADD PRIMARY KEY (`id`),
   ADD KEY `cid` (`cid`,`fid`,`stat`,`update`),
   ADD KEY `uid` (`uid`),
-  ADD KEY `seen` (`seens`),
-  ADD KEY `likes` (`likes`),
-  ADD KEY `seen_2` (`seen`),
+  ADD KEY `lock` (`lock`),
+  ADD KEY `tags` (`tags`),
+  ADD KEY `stat` (`stat`),
+  ADD KEY `data` (`data`);
+
+--
+-- Индексы таблицы `ls_cats`
+--
+ALTER TABLE `ls_cats`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `ls_lenta`
+--
+ALTER TABLE `ls_lenta`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
   ADD KEY `stat` (`stat`),
   ADD KEY `data` (`data`),
-  ADD KEY `preview_mobile` (`preview_mobile`);
+  ADD KEY `uid` (`uid`),
+  ADD KEY `onind` (`onind`),
+  ADD KEY `promo` (`promo`),
+  ADD KEY `spromo` (`spromo`),
+  ADD KEY `redak` (`redak`);
 
 --
 -- Индексы таблицы `news_cats`
@@ -376,129 +333,119 @@ ALTER TABLE `news_cats`
 ALTER TABLE `news_lenta`
   ADD PRIMARY KEY (`id`),
   ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
-  ADD KEY `likes` (`likes`),
-  ADD KEY `seen` (`seen`),
-  ADD KEY `stat` (`stat`),
-  ADD KEY `uid` (`uid`),
   ADD KEY `onind` (`onind`),
   ADD KEY `promo` (`promo`),
-  ADD KEY `spromo` (`spromo`),
-  ADD KEY `redak` (`redak`),
+  ADD KEY `stat` (`stat`),
   ADD KEY `data` (`data`),
-  ADD KEY `preview_mobile` (`preview_mobile`);
+  ADD KEY `uid` (`uid`),
+  ADD KEY `spromo` (`spromo`),
+  ADD KEY `redak` (`redak`);
 
 --
--- Индексы таблицы `partners_cats`
+-- Индексы таблицы `realestatenews_cats`
 --
-ALTER TABLE `partners_cats`
+ALTER TABLE `realestatenews_cats`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `partners_lenta`
+-- Индексы таблицы `realestatenews_lenta`
 --
-ALTER TABLE `partners_lenta`
+ALTER TABLE `realestatenews_lenta`
   ADD PRIMARY KEY (`id`),
   ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
-  ADD KEY `likes` (`likes`),
+  ADD KEY `data` (`data`),
   ADD KEY `stat` (`stat`),
   ADD KEY `uid` (`uid`),
   ADD KEY `onind` (`onind`),
   ADD KEY `promo` (`promo`),
   ADD KEY `spromo` (`spromo`),
-  ADD KEY `redak` (`redak`),
-  ADD KEY `data` (`data`),
-  ADD KEY `preview_mobile` (`preview_mobile`);
+  ADD KEY `redak` (`redak`);
 
 --
--- Индексы таблицы `prj_cats`
+-- Индексы таблицы `realestate_cats`
 --
-ALTER TABLE `prj_cats`
+ALTER TABLE `realestate_cats`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `prj_specprj`
+-- Индексы таблицы `realestate_contacts`
 --
-ALTER TABLE `prj_specprj`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
-  ADD KEY `likes` (`likes`),
-  ADD KEY `seen` (`seen`),
-  ADD KEY `stat` (`stat`),
-  ADD KEY `uid` (`uid`),
-  ADD KEY `onind` (`onind`),
-  ADD KEY `promo` (`promo`),
-  ADD KEY `spromo` (`spromo`),
-  ADD KEY `redak` (`redak`),
-  ADD KEY `data` (`data`),
-  ADD KEY `preview_mobile` (`preview_mobile`);
-
---
--- Индексы таблицы `publishnews_cats`
---
-ALTER TABLE `publishnews_cats`
+ALTER TABLE `realestate_contacts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `publishnews_lenta`
+-- Индексы таблицы `realestate_lenta`
 --
-ALTER TABLE `publishnews_lenta`
+ALTER TABLE `realestate_lenta`
   ADD PRIMARY KEY (`id`),
   ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
-  ADD KEY `likes` (`likes`),
-  ADD KEY `seen` (`seen`),
+  ADD KEY `FK__realestate_lenta__realestate_cats` (`cat`),
+  ADD KEY `data` (`data`),
   ADD KEY `stat` (`stat`),
   ADD KEY `uid` (`uid`),
   ADD KEY `onind` (`onind`),
   ADD KEY `promo` (`promo`),
-  ADD KEY `spromo` (`spromo`),
-  ADD KEY `redak` (`redak`),
-  ADD KEY `data` (`data`),
-  ADD KEY `preview_mobile` (`preview_mobile`);
+  ADD KEY `redak` (`redak`);
 
 --
--- Индексы таблицы `spravka_cats`
+-- Индексы таблицы `sport_cats`
 --
-ALTER TABLE `spravka_cats`
+ALTER TABLE `sport_cats`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `spravka_lenta`
+-- Индексы таблицы `sport_lenta`
 --
-ALTER TABLE `spravka_lenta`
+ALTER TABLE `sport_lenta`
   ADD PRIMARY KEY (`id`),
   ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
-  ADD KEY `likes` (`likes`),
   ADD KEY `stat` (`stat`),
+  ADD KEY `data` (`data`),
   ADD KEY `uid` (`uid`),
   ADD KEY `onind` (`onind`),
   ADD KEY `promo` (`promo`),
   ADD KEY `spromo` (`spromo`),
-  ADD KEY `redak` (`redak`),
-  ADD KEY `data` (`data`),
-  ADD KEY `preview_mobile` (`preview_mobile`);
+  ADD KEY `redak` (`redak`);
 
 --
--- Индексы таблицы `working_cats`
+-- Индексы таблицы `wiki_cats`
 --
-ALTER TABLE `working_cats`
+ALTER TABLE `wiki_cats`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `working_lenta`
+-- Индексы таблицы `wiki_lenta`
 --
-ALTER TABLE `working_lenta`
+ALTER TABLE `wiki_lenta`
   ADD PRIMARY KEY (`id`),
   ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
-  ADD KEY `likes` (`likes`),
-  ADD KEY `seen` (`seen`),
+  ADD KEY `FK__wiki_lenta__wiki_cats` (`cat`),
+  ADD KEY `data` (`data`),
+  ADD KEY `stat` (`stat`),
+  ADD KEY `uid` (`uid`),
+  ADD KEY `onind` (`onind`),
+  ADD KEY `promo` (`promo`),
+  ADD KEY `redak` (`redak`);
+
+--
+-- Индексы таблицы `world_cats`
+--
+ALTER TABLE `world_cats`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `world_lenta`
+--
+ALTER TABLE `world_lenta`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `pid` (`pid`,`stat`,`name`,`uid`),
+  ADD KEY `data` (`data`),
   ADD KEY `stat` (`stat`),
   ADD KEY `uid` (`uid`),
   ADD KEY `onind` (`onind`),
   ADD KEY `promo` (`promo`),
   ADD KEY `spromo` (`spromo`),
-  ADD KEY `redak` (`redak`),
-  ADD KEY `data` (`data`),
-  ADD KEY `preview_mobile` (`preview_mobile`);
+  ADD KEY `redak` (`redak`);
 
 --
 -- Индексы таблицы `_banners_items`
@@ -577,16 +524,21 @@ ALTER TABLE `_domains`
   ADD UNIQUE KEY `prefix` (`prefix`);
 
 --
--- Индексы таблицы `_fastlink`
+-- Индексы таблицы `_editors`
 --
-ALTER TABLE `_fastlink`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `link` (`link`);
+ALTER TABLE `_editors`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `_imagemaster`
 --
 ALTER TABLE `_imagemaster`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `_imports`
+--
+ALTER TABLE `_imports`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -600,7 +552,8 @@ ALTER TABLE `_lentalog`
 --
 ALTER TABLE `_likes`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `pid` (`pid`);
+  ADD KEY `pid` (`pid`),
+  ADD KEY `link` (`link`,`data`,`ip`);
 
 --
 -- Индексы таблицы `_menuitem`
@@ -631,7 +584,8 @@ ALTER TABLE `_modules`
 -- Индексы таблицы `_pages`
 --
 ALTER TABLE `_pages`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `link` (`link`);
 
 --
 -- Индексы таблицы `_planes`
@@ -659,6 +613,13 @@ ALTER TABLE `_settings`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `_shared`
+--
+ALTER TABLE `_shared`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `pid` (`pid`,`network`,`uid`,`ip`);
+
+--
 -- Индексы таблицы `_tags`
 --
 ALTER TABLE `_tags`
@@ -679,71 +640,8 @@ ALTER TABLE `_users`
   ADD KEY `mail` (`mail`(255));
 
 --
--- Индексы таблицы `_widget_contacts`
---
-ALTER TABLE `_widget_contacts`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `_widget_eventmap`
---
-ALTER TABLE `_widget_eventmap`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `tid` (`tid`),
-  ADD KEY `stat` (`stat`);
-
---
--- Индексы таблицы `_widget_eventtype`
---
-ALTER TABLE `_widget_eventtype`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `_widget_pics`
---
-ALTER TABLE `_widget_pics`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `pid` (`pid`,`link`),
-  ADD KEY `link` (`link`);
-
---
--- Индексы таблицы `_widget_video`
---
-ALTER TABLE `_widget_video`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `link` (`link`,`pid`),
-  ADD KEY `pid` (`pid`);
-
---
--- Индексы таблицы `_widget_votes`
---
-ALTER TABLE `_widget_votes`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `vid` (`vid`,`uid`,`pid`),
-  ADD KEY `link` (`link`);
-
---
--- Индексы таблицы `_widget_voting`
---
-ALTER TABLE `_widget_voting`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `pid` (`pid`);
-
---
 -- AUTO_INCREMENT для сохранённых таблиц
 --
-
---
--- AUTO_INCREMENT для таблицы `accidents_cats`
---
-ALTER TABLE `accidents_cats`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT для таблицы `accidents_lenta`
---
-ALTER TABLE `accidents_lenta`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1280;
 
 --
 -- AUTO_INCREMENT для таблицы `add_cats`
@@ -755,458 +653,434 @@ ALTER TABLE `add_cats`
 -- AUTO_INCREMENT для таблицы `add_nodes`
 --
 ALTER TABLE `add_nodes`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58707;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31429;
 
 --
 -- AUTO_INCREMENT для таблицы `adverting_cats`
 --
 ALTER TABLE `adverting_cats`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `adverting_lenta`
 --
 ALTER TABLE `adverting_lenta`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2503;
+
+--
+-- AUTO_INCREMENT для таблицы `adverting_lenta1`
+--
+ALTER TABLE `adverting_lenta1`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1119;
+
+--
+-- AUTO_INCREMENT для таблицы `adverting_lenta222`
+--
+ALTER TABLE `adverting_lenta222`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1119;
 
 --
 -- AUTO_INCREMENT для таблицы `advertise_objects`
 --
 ALTER TABLE `advertise_objects`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=800;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19662;
 
 --
 -- AUTO_INCREMENT для таблицы `advertise_pays`
 --
 ALTER TABLE `advertise_pays`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=800;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29370;
 
 --
 -- AUTO_INCREMENT для таблицы `advertise_razdels`
 --
 ALTER TABLE `advertise_razdels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT для таблицы `advertise_users`
 --
 ALTER TABLE `advertise_users`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=800;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1744;
 
 --
 -- AUTO_INCREMENT для таблицы `afisha_cats`
 --
 ALTER TABLE `afisha_cats`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT для таблицы `afisha_lenta`
 --
 ALTER TABLE `afisha_lenta`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=482;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=439;
 
 --
 -- AUTO_INCREMENT для таблицы `auto_cats`
 --
 ALTER TABLE `auto_cats`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT для таблицы `auto_lenta`
 --
 ALTER TABLE `auto_lenta`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1865;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79825;
 
 --
--- AUTO_INCREMENT для таблицы `blogs_cats`
+-- AUTO_INCREMENT для таблицы `brandsbattle_lenta`
 --
-ALTER TABLE `blogs_cats`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `brandsbattle_lenta`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
--- AUTO_INCREMENT для таблицы `blogs_lenta`
+-- AUTO_INCREMENT для таблицы `business_cats`
 --
-ALTER TABLE `blogs_lenta`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=168;
+ALTER TABLE `business_cats`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT для таблицы `category129_cats`
+-- AUTO_INCREMENT для таблицы `business_lenta`
 --
-ALTER TABLE `category129_cats`
-  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Идентификатор категории', AUTO_INCREMENT=2;
+ALTER TABLE `business_lenta`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72107;
 
 --
--- AUTO_INCREMENT для таблицы `category129_lenta`
+-- AUTO_INCREMENT для таблицы `category150_lenta`
 --
-ALTER TABLE `category129_lenta`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Идентификатор рубрики';
+ALTER TABLE `category150_lenta`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1866;
 
 --
--- AUTO_INCREMENT для таблицы `category149_cats`
+-- AUTO_INCREMENT для таблицы `category1829_cats`
 --
-ALTER TABLE `category149_cats`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT для таблицы `category149_specprj`
---
-ALTER TABLE `category149_specprj`
+ALTER TABLE `category1829_cats`
   MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `category1829_lenta`
+--
+ALTER TABLE `category1829_lenta`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `companies_actions`
 --
 ALTER TABLE `companies_actions`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=177;
 
 --
 -- AUTO_INCREMENT для таблицы `companies_cats`
 --
 ALTER TABLE `companies_cats`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT для таблицы `companies_contacts`
 --
 ALTER TABLE `companies_contacts`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 
 --
 -- AUTO_INCREMENT для таблицы `companies_items`
 --
 ALTER TABLE `companies_items`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=927;
 
 --
 -- AUTO_INCREMENT для таблицы `companies_qa`
 --
 ALTER TABLE `companies_qa`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1635;
 
 --
 -- AUTO_INCREMENT для таблицы `concurs_lenta`
 --
 ALTER TABLE `concurs_lenta`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT для таблицы `dosug_cats`
+-- AUTO_INCREMENT для таблицы `economy_cats`
 --
-ALTER TABLE `dosug_cats`
+ALTER TABLE `economy_cats`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT для таблицы `economy_lenta`
+--
+ALTER TABLE `economy_lenta`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+
+--
+-- AUTO_INCREMENT для таблицы `livestream_cats`
+--
+ALTER TABLE `livestream_cats`
   MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `dosug_lenta`
+-- AUTO_INCREMENT для таблицы `livestream_lenta`
 --
-ALTER TABLE `dosug_lenta`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=980;
-
---
--- AUTO_INCREMENT для таблицы `globalnews_cats`
---
-ALTER TABLE `globalnews_cats`
+ALTER TABLE `livestream_lenta`
   MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT для таблицы `globalnews_lenta`
---
-ALTER TABLE `globalnews_lenta`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=535;
-
---
--- AUTO_INCREMENT для таблицы `itogi_cats`
---
-ALTER TABLE `itogi_cats`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT для таблицы `itogi_lenta`
---
-ALTER TABLE `itogi_lenta`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=774;
-
---
--- AUTO_INCREMENT для таблицы `lifehistory_cats`
---
-ALTER TABLE `lifehistory_cats`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT для таблицы `lifehistory_lenta`
---
-ALTER TABLE `lifehistory_lenta`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT для таблицы `live_cat`
 --
 ALTER TABLE `live_cat`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
 -- AUTO_INCREMENT для таблицы `live_forum`
 --
 ALTER TABLE `live_forum`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT для таблицы `live_lenta`
 --
 ALTER TABLE `live_lenta`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=482;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `ls_cats`
+--
+ALTER TABLE `ls_cats`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT для таблицы `ls_lenta`
+--
+ALTER TABLE `ls_lenta`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3072;
 
 --
 -- AUTO_INCREMENT для таблицы `news_cats`
 --
 ALTER TABLE `news_cats`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `news_lenta`
 --
 ALTER TABLE `news_lenta`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22070;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131508;
 
 --
--- AUTO_INCREMENT для таблицы `partners_cats`
+-- AUTO_INCREMENT для таблицы `realestatenews_cats`
 --
-ALTER TABLE `partners_cats`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `realestatenews_cats`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `partners_lenta`
+-- AUTO_INCREMENT для таблицы `realestatenews_lenta`
 --
-ALTER TABLE `partners_lenta`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=321;
+ALTER TABLE `realestatenews_lenta`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT для таблицы `prj_cats`
+-- AUTO_INCREMENT для таблицы `realestate_cats`
 --
-ALTER TABLE `prj_cats`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `realestate_cats`
+  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Идентификатор категории', AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `prj_specprj`
+-- AUTO_INCREMENT для таблицы `realestate_lenta`
 --
-ALTER TABLE `prj_specprj`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=610;
+ALTER TABLE `realestate_lenta`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Идентификатор рубрики', AUTO_INCREMENT=77;
 
 --
--- AUTO_INCREMENT для таблицы `publishnews_cats`
+-- AUTO_INCREMENT для таблицы `sport_cats`
 --
-ALTER TABLE `publishnews_cats`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `sport_cats`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `publishnews_lenta`
+-- AUTO_INCREMENT для таблицы `sport_lenta`
 --
-ALTER TABLE `publishnews_lenta`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=467;
+ALTER TABLE `sport_lenta`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75354;
 
 --
--- AUTO_INCREMENT для таблицы `spravka_cats`
+-- AUTO_INCREMENT для таблицы `wiki_cats`
 --
-ALTER TABLE `spravka_cats`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `wiki_cats`
+  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Идентификатор категории', AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT для таблицы `spravka_lenta`
+-- AUTO_INCREMENT для таблицы `wiki_lenta`
 --
-ALTER TABLE `spravka_lenta`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+ALTER TABLE `wiki_lenta`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Идентификатор рубрики', AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT для таблицы `working_cats`
+-- AUTO_INCREMENT для таблицы `world_cats`
 --
-ALTER TABLE `working_cats`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `world_cats`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `working_lenta`
+-- AUTO_INCREMENT для таблицы `world_lenta`
 --
-ALTER TABLE `working_lenta`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `world_lenta`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2512;
 
 --
 -- AUTO_INCREMENT для таблицы `_banners_items`
 --
 ALTER TABLE `_banners_items`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=604;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2577;
 
 --
 -- AUTO_INCREMENT для таблицы `_banners_orders`
 --
 ALTER TABLE `_banners_orders`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=586;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2351;
 
 --
 -- AUTO_INCREMENT для таблицы `_banners_pos`
 --
 ALTER TABLE `_banners_pos`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT для таблицы `_commentf`
 --
 ALTER TABLE `_commentf`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1068;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12559;
 
 --
 -- AUTO_INCREMENT для таблицы `_comments`
 --
 ALTER TABLE `_comments`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36100;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1183888;
 
 --
 -- AUTO_INCREMENT для таблицы `_cron`
 --
 ALTER TABLE `_cron`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT для таблицы `_crosslink`
 --
 ALTER TABLE `_crosslink`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `_domains`
 --
 ALTER TABLE `_domains`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT для таблицы `_fastlink`
+-- AUTO_INCREMENT для таблицы `_editors`
 --
-ALTER TABLE `_fastlink`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=282;
+ALTER TABLE `_editors`
+  MODIFY `id` bigint(40) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `_imagemaster`
 --
 ALTER TABLE `_imagemaster`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT для таблицы `_imports`
+--
+ALTER TABLE `_imports`
   MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `_likes`
 --
 ALTER TABLE `_likes`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173119;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8388607;
 
 --
 -- AUTO_INCREMENT для таблицы `_menuitem`
 --
 ALTER TABLE `_menuitem`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=509;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=329;
 
 --
 -- AUTO_INCREMENT для таблицы `_menulist`
 --
 ALTER TABLE `_menulist`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT COMMENT 'это nid в элементах меню', AUTO_INCREMENT=11;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT COMMENT 'это nid в элементах меню', AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT для таблицы `_mistakes`
 --
 ALTER TABLE `_mistakes`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2164;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3449;
 
 --
 -- AUTO_INCREMENT для таблицы `_modules`
 --
 ALTER TABLE `_modules`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT для таблицы `_pages`
 --
 ALTER TABLE `_pages`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1830;
 
 --
 -- AUTO_INCREMENT для таблицы `_planes`
 --
 ALTER TABLE `_planes`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1296;
 
 --
 -- AUTO_INCREMENT для таблицы `_rss`
 --
 ALTER TABLE `_rss`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT для таблицы `_settings`
 --
 ALTER TABLE `_settings`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+
+--
+-- AUTO_INCREMENT для таблицы `_shared`
+--
+ALTER TABLE `_shared`
+  MODIFY `id` bigint(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4573;
 
 --
 -- AUTO_INCREMENT для таблицы `_tags`
 --
 ALTER TABLE `_tags`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=495;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=251;
 
 --
 -- AUTO_INCREMENT для таблицы `_users`
 --
 ALTER TABLE `_users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6137;
-
---
--- AUTO_INCREMENT для таблицы `_widget_contacts`
---
-ALTER TABLE `_widget_contacts`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT для таблицы `_widget_eventmap`
---
-ALTER TABLE `_widget_eventmap`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT для таблицы `_widget_eventtype`
---
-ALTER TABLE `_widget_eventtype`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT для таблицы `_widget_pics`
---
-ALTER TABLE `_widget_pics`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11376;
-
---
--- AUTO_INCREMENT для таблицы `_widget_video`
---
-ALTER TABLE `_widget_video`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=745;
-
---
--- AUTO_INCREMENT для таблицы `_widget_votes`
---
-ALTER TABLE `_widget_votes`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205142;
-
---
--- AUTO_INCREMENT для таблицы `_widget_voting`
---
-ALTER TABLE `_widget_voting`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1344;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31046;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --
 
 --
--- Ограничения внешнего ключа таблицы `category129_contacts`
+-- Ограничения внешнего ключа таблицы `realestate_contacts`
 --
-ALTER TABLE `category129_contacts`
-  ADD CONSTRAINT `FK__category129_contacts__category129_lenta` FOREIGN KEY (`id`) REFERENCES `category129_lenta` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `realestate_contacts`
+  ADD CONSTRAINT `FK__realestate_contacts__realestate_lenta` FOREIGN KEY (`id`) REFERENCES `realestate_lenta` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `category129_lenta`
+-- Ограничения внешнего ключа таблицы `realestate_lenta`
 --
-ALTER TABLE `category129_lenta`
-  ADD CONSTRAINT `FK__category129_lenta__category129_cats` FOREIGN KEY (`cat`) REFERENCES `category129_cats` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `realestate_lenta`
+  ADD CONSTRAINT `FK__realestate_lenta__realestate_cats` FOREIGN KEY (`cat`) REFERENCES `realestate_cats` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ограничения внешнего ключа таблицы `wiki_lenta`
+--
+ALTER TABLE `wiki_lenta`
+  ADD CONSTRAINT `FK__wiki_lenta__wiki_cats` FOREIGN KEY (`cat`) REFERENCES `wiki_cats` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;

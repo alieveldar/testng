@@ -8,6 +8,7 @@
 CREATE TABLE `companies_qa` (
   `id` mediumint(9) NOT NULL,
   `name` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
   `text` text NOT NULL,
   `pic` varchar(255) NOT NULL,
   `pid` mediumint(9) NOT NULL DEFAULT '0',
